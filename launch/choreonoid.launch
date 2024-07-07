@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+
+<launch>
+<node name="choreonoid" pkg="choreonoid_ros" type="choreonoid" args="$(find sq2_ccv_choreonoid)/project/test.cnoid" output="screen" />
+</launch>
