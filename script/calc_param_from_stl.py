@@ -44,7 +44,39 @@ if __name__ == '__main__':
     print(" Iy: ", Iy)
     print(" Iz: ", Iz)
 
+    ##calculate inertia of roll joint link
+    mass = 10.0
+    length = 0.20
+    width = 0.15
+    height = 0.15
+    Ix, Iy, Iz = calc_box_inertia(mass, length, width, height)
+    print("roll_joint_link:")
+    print(" Ix: ", Ix)
+    print(" Iy: ", Iy)
+    print(" Iz: ", Iz)
 
-  
+    ##calculate inertia of upper body link
+    mass = 20.0
+    length = 0.258
+    width = 0.258
+    height = 0.60
+    Ix, Iy, Iz = calc_box_inertia(mass, length, width, height)
+    print("upper_body_link:")
+    print(" Ix: ", Ix)
+    print(" Iy: ", Iy)
+    print(" Iz: ", Iz)
+
+    ##calculate inertia of caster joint link
+    mass = 1.0
+    length = 0.30
+    width = 0.15
+    height = 0.05
+    Ix, Iy, Iz = calc_box_inertia(mass, length, width, height)
+    print("caster_joint_link:")
+    print(" Ix: ", Ix)
+    print(" Iy: ", Iy)
+    print(" Iz: ", Iz)
+
+
 
 

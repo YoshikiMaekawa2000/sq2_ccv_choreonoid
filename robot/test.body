@@ -136,9 +136,9 @@ links:
         joint_range: [-30, 30]
         center_of_mass: [0, 0, 0]
         mass: 10.0
-        inertia: [0, 0, 0,
-                    0, 0, 0,
-                    0, 0, 0]
+        inertia: [0.0375, 0, 0,
+                    0, 0.052083333333333336, 0,
+                    0, 0, 0.052083333333333336]
         material: Slider
         elements:
             -
@@ -160,9 +160,9 @@ links:
         joint_type: fixed
         center_of_mass: [0, 0, 0]
         mass: 20.0
-        inertia: [0, 0, 0,
-                    0, 0, 0,
-                    0, 0, 0]
+        inertia: [0.71094, 0, 0,
+                    0, 0.71094, 0,
+                    0, 0, 0.22188]
         material: Slider
         elements:
             -
@@ -186,9 +186,9 @@ links:
         joint_range: [-30, 30]
         center_of_mass: [0, 0, 0]
         mass: 1.0
-        inertia: [0, 0, 0,
-                    0, 0, 0,
-                    0, 0, 0]
+        inertia: [ 0.0020833333333333333, 0, 0,
+                    0, 0.007708333333333333, 0,
+                    0, 0, 0.009374999999999998]
         material: Slider
         elements:
             -
@@ -212,9 +212,9 @@ links:
         joint_range: [-30, 30]
         center_of_mass: [0, 0, 0]
         mass: 1.0
-        inertia: [0, 0, 0,
-                    0, 0, 0,
-                    0, 0, 0]
+        inertia: [0.0020833333333333333, 0, 0,
+                    0, 0.007708333333333333, 0,
+                    0, 0, 0.009374999999999998]
         material: Slider
         elements:
             -
@@ -229,6 +229,118 @@ links:
                         type: Shape
                         translation: [0, 0, 0.0]
                         geometry: {type: Box, size: [0.30, 0.15, 0.05]}
+    -
+        name: front_right_caster_link
+        parent: front_caster_joint_link
+        translation: [0.152, -0.167, -0.024]
+        rotation: [0, 0, 1, 90]
+        joint_type: revolute
+        joint_axis: [1, 0, 0]
+        center_of_mass: [0, 0, 0]
+        mass: 1.0
+        inertia: [0.0020833333333333333, 0, 0,
+                    0, 0.007708333333333333, 0,
+                    0, 0, 0.009374999999999998]
+        material: Tire
+        elements:
+            -
+                type: Visual
+                resource:
+                    uri: "../meshes/caster.stl"
+
+            -
+                type: Collision
+                elements:
+                    -
+                        type: Shape
+                        translation: [0, 0, 0.0]
+                        rotation: [0, 0, 1, 90]
+                        geometry: {type: Cylinder, radius: 0.0635, height: 0.024}
+
+    -
+        name: front_left_caster_link
+        parent: front_caster_joint_link
+        translation: [0.152, 0.167, -0.024]
+        rotation: [0, 0, 1, -90]
+        joint_type: revolute
+        joint_axis: [1, 0, 0]
+        center_of_mass: [0, 0, 0]
+        mass: 1.0
+        inertia: [0.0020833333333333333, 0, 0,
+                    0, 0.007708333333333333, 0,
+                    0, 0, 0.009374999999999998]
+        material: Tire
+        elements:
+            -
+                type: Visual
+                resource:
+                    uri: "../meshes/caster.stl"
+
+            -
+                type: Collision
+                elements:
+                    -
+                        type: Shape
+                        translation: [0, 0, 0.0]
+                        rotation: [0, 0, 1, 90]
+                        geometry: {type: Cylinder, radius: 0.0635, height: 0.024}
+    -
+        name: back_left_caster_link
+        parent: back_caster_joint_link
+        translation: [-0.152, 0.167, -0.024]
+        rotation: [0, 0, 1, -90]
+        joint_type: revolute
+        joint_axis: [1, 0, 0]
+        center_of_mass: [0, 0, 0]
+        mass: 1.0
+        inertia: [0.0020833333333333333, 0, 0,
+                    0, 0.007708333333333333, 0,
+                    0, 0, 0.009374999999999998]
+        material: Tire
+        elements:
+            -
+                type: Visual
+                resource:
+                    uri: "../meshes/caster.stl"
+
+            -
+                type: Collision
+                elements:
+                    -
+                        type: Shape
+                        translation: [0, 0, 0.0]
+                        rotation: [0, 0, 1, 90]
+                        geometry: {type: Cylinder, radius: 0.0635, height: 0.024}
+    -
+        name: back_right_caster_link
+        parent: back_caster_joint_link
+        translation: [-0.152, -0.167, -0.024]
+        rotation: [0, 0, 1, 90]
+        joint_type: revolute
+        joint_axis: [1, 0, 0]
+        center_of_mass: [0, 0, 0]
+        mass: 1.0
+        inertia: [0.0020833333333333333, 0, 0,
+                    0, 0.007708333333333333, 0,
+                    0, 0, 0.009374999999999998]
+        material: Tire
+        elements:
+            -
+                type: Visual
+                resource:
+                    uri: "../meshes/caster.stl"
+
+            -
+                type: Collision
+                elements:
+                    -
+                        type: Shape
+                        translation: [0, 0, 0.0]
+                        rotation: [0, 0, 1, 90]
+                        geometry: {type: Cylinder, radius: 0.0635, height: 0.024}
+    
+
+    
 
 
     
