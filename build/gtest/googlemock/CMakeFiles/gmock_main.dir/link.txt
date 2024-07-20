@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -g -shared -Wl,-soname,libgmock_maind.so -o ../lib/libgmock_maind.so CMakeFiles/gmock_main.dir/src/gmock_main.cc.o  -Wl,-rpath,/home/amsl/catkin_ws/src/sq2_ccv_choreonoid/build/gtest/lib ../lib/libgmockd.so ../lib/libgtestd.so -lpthread 
