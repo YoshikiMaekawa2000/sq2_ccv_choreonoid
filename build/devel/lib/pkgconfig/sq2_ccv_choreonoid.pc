@@ -1,0 +1,8 @@
+prefix=/home/amsl/catkin_ws/src/sq2_ccv_choreonoid/build/devel
+
+Name: sq2_ccv_choreonoid
+Description: Description of sq2_ccv_choreonoid
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

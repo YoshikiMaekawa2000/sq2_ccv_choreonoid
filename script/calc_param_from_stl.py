@@ -77,6 +77,17 @@ if __name__ == '__main__':
     print(" Iy: ", Iy)
     print(" Iz: ", Iz)
 
+    ##calculate inertia of caster link
+    mass = 1.0
+    radius = 0.0635
+    length = 0.024
+    Ix, Iy, Iz = calc_cylinder_inertia(mass, radius, length)
+    print("caster_link:")
+    print(" Ix: ", Ix)
+    print(" Iy: ", Iy)
+    print(" Iz: ", Iz)
+
+
 
 
 

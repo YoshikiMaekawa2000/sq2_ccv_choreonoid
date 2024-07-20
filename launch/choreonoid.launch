@@ -1,5 +1,16 @@
 <?xml version="1.0"?>
 
 <launch>
-<node name="choreonoid" pkg="choreonoid_ros" type="choreonoid" args="$(find sq2_ccv_choreonoid)/project/test.cnoid" output="screen" />
+
+    <arg name="project_file" default="ccv_test.cnoid"/>
+
+    <!-- Choreonoid on ROS -->
+    <include file="$(find choreonoid_ros)/launch/choreonoid.launch">
+    <arg name="choreonoid_arg" value="$(find sq2_ccv_choreonoid)/project/$(arg project_file)"/>
+    </include>
+
+    <!-- ROS Control -->
+    <include file="$(find sq2_ccv_choreonoid)/launch/control.launch" />
+
+
 </launch>

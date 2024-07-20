@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="model" default="$(find sq2_ccv_choreonoid)/robot/sq2_ccv.urdf" />
+
+    <!-- robot_description -->
+    <param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>
+    <!-- state publisher -->
+    <node ns="/sq2_ccv" name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen"/>
+
+    <!-- <node name="controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" ns="/sq2_ccv"/> -->
+
+    <!-- controller -->
+    <rosparam file="$(find sq2_ccv_description)/config/controller.yaml" command="load"/>
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" ns="/sq2_ccv" respawn="true" output="screen"
+        args="
+            joint_state_controller
+            diff_drive_steering_controller
+            roll_pitch_controller
+            turn_table_controller
+        "/>
+</launch>
