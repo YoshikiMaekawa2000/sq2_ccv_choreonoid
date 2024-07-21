@@ -327,10 +327,101 @@
 	<child link="back_pitch2shaft_link"/>
     </joint>
 
+<!-- caster_support -->
+    <link name="front_right_caster_support_link">
+      <visual>
+        <origin xyz="0 0 0.05" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.05 0.05 0.01"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.05" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.05 0.05 0.01"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="front_right_caster_support_joint" type="continuous">
+      <origin xyz="0.043 -0.167 0.0" rpy="0 0 0"/>
+      <parent link="front_pitch2shaft_link"/>
+      <child link="front_right_caster_support_link"/>
+      <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="front_left_caster_support_link">
+      <visual>
+        <origin xyz="0 0 0.05" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.05 0.05 0.01"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.05" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.05 0.05 0.01"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="front_left_caster_support_joint" type="continuous">
+      <origin xyz="0.043 0.167 0.0" rpy="0 0 0"/>
+      <parent link="front_pitch2shaft_link"/>
+      <child link="front_left_caster_support_link"/>
+      <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="back_right_caster_support_link">
+      <visual>
+        <origin xyz="0 0 0.05" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.05 0.05 0.01"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.05" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.05 0.05 0.01"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="back_right_caster_support_joint" type="continuous">
+      <origin xyz="0.043 -0.167 0.0" rpy="0 0 0"/>
+      <parent link="back_pitch2shaft_link"/>
+      <child link="back_right_caster_support_link"/>
+      <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="back_left_caster_support_link">
+      <visual>
+        <origin xyz="0 0 0.05" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.05 0.05 0.01"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.05" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.05 0.05 0.01"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="back_left_caster_support_joint" type="continuous">
+      <origin xyz="0.043 0.167 0.0" rpy="0 0 0"/>
+      <parent link="back_pitch2shaft_link"/>
+      <child link="back_left_caster_support_link"/>
+      <axis xyz="0 0 1"/>
+    </joint>
+
+
+
 <!-- caster -->
     <link name="front_right_caster_link">
       <visual>
-		<origin xyz="0 0 0" rpy="1.5708 0 0"/>
+		    <origin xyz="0 0 0" rpy="1.5708 0 0"/>
         <geometry>
 	  	  <cylinder radius="0.0635" length="0.024"/>
         </geometry>
@@ -351,10 +442,11 @@
       </inertial>
     </link>
 
-    <!-- <joint name="front_right_caster_joint" type="fixed"> -->
     <joint name="front_right_caster_joint" type="continuous">
-      <origin xyz="0.043 -0.167 -0.010" rpy="0 0 0"/>
-      <parent link="front_pitch2shaft_link"/>
+      <!-- <origin xyz="0.043 -0.167 -0.010" rpy="0 0 0"/> -->
+      <origin xyz="0 0 -0.010" rpy="0 0 0"/>
+      <!-- <parent link="front_pitch2shaft_link"/> -->
+      <parent link="front_right_caster_support_link"/>
       <child link="front_right_caster_link"/>
       <axis xyz="0 1 0"/>
     </joint>
@@ -384,8 +476,9 @@
 
     <!-- <joint name="front_left_caster_joint" type="fixed"> -->
     <joint name="front_left_caster_joint" type="continuous">
-      <origin xyz="0.043 0.167 -0.010" rpy="0 0 0"/>
-      <parent link="front_pitch2shaft_link"/>
+      <!-- <origin xyz="0.043 0.167 -0.010" rpy="0 0 0"/> -->
+          <origin xyz="0 0 -0.010" rpy="0 0 0"/>
+      <parent link="front_left_caster_support_link"/>
       <child link="front_left_caster_link"/>
       <axis xyz="0 1 0"/>
     </joint>
@@ -415,8 +508,9 @@
 
     <!-- <joint name="back_right_caster_joint" type="fixed"> -->
     <joint name="back_right_caster_joint" type="continuous">
-      <origin xyz="0.043 -0.167 -0.010" rpy="0 0 0"/>
-      <parent link="back_pitch2shaft_link"/>
+      <!-- <origin xyz="0.043 -0.167 -0.010" rpy="0 0 0"/> -->
+      <origin xyz="0 0 -0.010" rpy="0 0 0"/>
+      <parent link="back_right_caster_support_link"/>
       <child link="back_right_caster_link"/>
       <axis xyz="0 1 0"/>
     </joint>
@@ -446,8 +540,9 @@
 
     <!-- <joint name="back_left_caster_joint" type="fixed"> -->
     <joint name="back_left_caster_joint" type="continuous">
-      <origin xyz="0.043 0.167 -0.010" rpy="0 0 0"/>
-      <parent link="back_pitch2shaft_link"/>
+      <!-- <origin xyz="0.043 0.167 -0.010" rpy="0 0 0"/> -->
+      <origin xyz="0 0 -0.010" rpy="0 0 0"/>
+      <parent link="back_left_caster_support_link"/>
       <child link="back_left_caster_link"/>
       <axis xyz="0 1 0"/>
     </joint>
