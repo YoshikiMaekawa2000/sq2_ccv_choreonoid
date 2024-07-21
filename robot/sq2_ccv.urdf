@@ -290,7 +290,7 @@
     <origin xyz="0.109 0 -0.0183" rpy="0 0 0"/>
     <parent link="front_casters_pitch_link"/>
     <!-- <axis xyz="1 0 0"/> -->
-    <!-- <limit velocity="6.28" effort="28" lower="-0.5" upper="0.5"/> -->
+    <limit velocity="6.28" effort="28" lower="-0.5" upper="0.5"/>
 	<child link="front_pitch2shaft_link"/>
     </joint>
 
@@ -323,7 +323,7 @@
     <origin xyz="0.109 0 -0.0183" rpy="0 0 0"/>
     <parent link="back_casters_pitch_link"/>
     <!-- <axis xyz="1 0 0"/> -->
-    <!-- <limit velocity="6.28" effort="28" lower="-0.5" upper="0.5"/> -->
+    <limit velocity="6.28" effort="28" lower="-0.5" upper="0.5"/>
 	<child link="back_pitch2shaft_link"/>
     </joint>
 
@@ -351,6 +351,7 @@
       </inertial>
     </link>
 
+    <!-- <joint name="front_right_caster_joint" type="fixed"> -->
     <joint name="front_right_caster_joint" type="continuous">
       <origin xyz="0.043 -0.167 -0.010" rpy="0 0 0"/>
       <parent link="front_pitch2shaft_link"/>
@@ -381,6 +382,7 @@
       </inertial>
     </link>
 
+    <!-- <joint name="front_left_caster_joint" type="fixed"> -->
     <joint name="front_left_caster_joint" type="continuous">
       <origin xyz="0.043 0.167 -0.010" rpy="0 0 0"/>
       <parent link="front_pitch2shaft_link"/>
@@ -411,6 +413,7 @@
       </inertial>
     </link>
 
+    <!-- <joint name="back_right_caster_joint" type="fixed"> -->
     <joint name="back_right_caster_joint" type="continuous">
       <origin xyz="0.043 -0.167 -0.010" rpy="0 0 0"/>
       <parent link="back_pitch2shaft_link"/>
@@ -441,6 +444,7 @@
       </inertial>
     </link>
 
+    <!-- <joint name="back_left_caster_joint" type="fixed"> -->
     <joint name="back_left_caster_joint" type="continuous">
       <origin xyz="0.043 0.167 -0.010" rpy="0 0 0"/>
       <parent link="back_pitch2shaft_link"/>
