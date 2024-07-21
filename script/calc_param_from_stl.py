@@ -24,6 +24,17 @@ if __name__ == '__main__':
     print(" Iy: ", Iy)
     print(" Iz: ", Iz)
 
+    ##calculate inertia of base2body_link
+    mass = 5.0
+    length = 0.319
+    width = 0.125
+    height = 0.090
+    Ix, Iy, Iz = calc_box_inertia(mass, length, width, height)
+    print("base2body_link:")
+    print(" Ix: ", Ix)
+    print(" Iy: ", Iy)
+    print(" Iz: ", Iz)
+
     ##calculate inertia of steer_link
     mass = 1.0
     radius = 0.03
@@ -44,35 +55,24 @@ if __name__ == '__main__':
     print(" Iy: ", Iy)
     print(" Iz: ", Iz)
 
-    ##calculate inertia of roll joint link
-    mass = 10.0
-    length = 0.20
-    width = 0.15
-    height = 0.15
-    Ix, Iy, Iz = calc_box_inertia(mass, length, width, height)
-    print("roll_joint_link:")
-    print(" Ix: ", Ix)
-    print(" Iy: ", Iy)
-    print(" Iz: ", Iz)
-
-    ##calculate inertia of upper body link
-    mass = 20.0
-    length = 0.258
-    width = 0.258
-    height = 0.60
-    Ix, Iy, Iz = calc_box_inertia(mass, length, width, height)
-    print("upper_body_link:")
-    print(" Ix: ", Ix)
-    print(" Iy: ", Iy)
-    print(" Iz: ", Iz)
-
-    ##calculate inertia of caster joint link
+    ##calculate inertia of casters_pitch_link
     mass = 1.0
-    length = 0.30
+    length = 0.15
     width = 0.15
     height = 0.05
     Ix, Iy, Iz = calc_box_inertia(mass, length, width, height)
-    print("caster_joint_link:")
+    print("casters_pitch_link:")
+    print(" Ix: ", Ix)
+    print(" Iy: ", Iy)
+    print(" Iz: ", Iz)
+
+    ##calculate inertia of pitch2shaft_link
+    mass = 1.0
+    length = 0.078
+    width = 0.120
+    height = 0.04
+    Ix, Iy, Iz = calc_box_inertia(mass, length, width, height)
+    print("pitch2shaft_link:")
     print(" Ix: ", Ix)
     print(" Iy: ", Iy)
     print(" Iz: ", Iz)
@@ -86,6 +86,29 @@ if __name__ == '__main__':
     print(" Ix: ", Ix)
     print(" Iy: ", Iy)
     print(" Iz: ", Iz)
+
+    ##calculate inertia of battery_box_link
+    mass = 20.0
+    length = 0.208
+    width = 0.208
+    height = 0.5535
+    Ix, Iy, Iz = calc_box_inertia(mass, length, width, height)
+    print("upper_body_link:")
+    print(" Ix: ", Ix)
+    print(" Iy: ", Iy)
+    print(" Iz: ", Iz)
+
+    ##calculate inertia of upper_body_link
+    mass = 1.0
+    length = 0.258
+    width = 0.258
+    height = 0.508
+    Ix, Iy, Iz = calc_box_inertia(mass, length, width, height)
+    print("upper_body_link:")
+    print(" Ix: ", Ix)
+    print(" Iy: ", Iy)
+    print(" Iz: ", Iz)
+
 
 
 

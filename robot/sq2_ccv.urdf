@@ -24,8 +24,9 @@
     <inertial>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <mass value="5.0"/>
-        <inertia ixx="0.011" ixy="0" ixz="0" iyy="0.20" iyz="0" izz="0.27"/>
+        <inertia ixx="0.10539041666666665" ixy="0" ixz="0" iyy="0.005400416666666666" iyz="0" izz="0.1091775"/>
     </inertial>
+
     </link>
 
     <joint name="base_link_joint" type="fixed">
@@ -51,9 +52,10 @@
     <inertial>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
         <mass value="5.0"/>
-        <inertia ixx="0.011" ixy="0" ixz="0" iyy="0.20" iyz="0" izz="0.27"/>
+        <inertia ixx="0.009885416666666667" ixy="0" ixz="0" iyy="0.045775416666666666" iyz="0" izz="0.048910833333333334"/>
     </inertial>
     </link>
+
 
     <joint name="base2body_link_joint" type="fixed">
     <parent link="base_link"/>
@@ -81,9 +83,10 @@
     <inertial>
 		<origin xyz="0 0 0.0015" rpy="0 0 0"/>
 		<mass value="1.0"/>
-        <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+        <inertia ixx="0.0021" ixy="0" ixz="0" iyy="0.0021" iyz="0" izz="0.00045"/>
     </inertial>
     </link>
+
 
     <joint name="right_steering_joint" type="revolute">
     <origin xyz="0 -0.2245 0.025" rpy="0 0 0"/>
@@ -112,7 +115,7 @@
     <inertial>
 		<origin xyz="0 0 0.0015" rpy="0 0 0"/>
 		<mass value="1.0"/>
-        <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+        <inertia ixx="0.0021" ixy="0" ixz="0" iyy="0.0021" iyz="0" izz="0.00045"/>
     </inertial>
     </link>
 
@@ -144,9 +147,10 @@
     <inertial>
 		<origin xyz="0 0 0" rpy="1.5708 0 0"/>
 		<mass value="5.0"/>
-        <inertia ixx="0.011" ixy="0" ixz="0" iyy="0.20" iyz="0" izz="0.27"/>
+        <inertia ixx="0.026000729166666663" ixy="0" ixz="0" iyy="0.026000729166666663" iyz="0" izz="0.05148062499999999"/>
     </inertial>
     </link>
+
 
     <joint name="right_wheel_joint" type="continuous">
     <origin xyz="0 0 0.0400" rpy="0 0 0"/>
@@ -154,7 +158,8 @@
     <child link="right_wheel_link"/>
     <axis xyz="0 1 0"/>
     <limit velocity="17.45" effort="7.5"/>
-    <dynamics damping="0.7"/>
+    <dynamics damping="0.0"/>
+    <!-- <dynamics damping="0.7"/> -->
     </joint>
 
     <link name="left_wheel_link">
@@ -176,7 +181,7 @@
     <inertial>
 		<origin xyz="0 0 0" rpy="1.5708 0 0"/>
 		<mass value="5.0"/>
-        <inertia ixx="0.011" ixy="0" ixz="0" iyy="0.20" iyz="0" izz="0.27"/>
+        <inertia ixx="0.026000729166666663" ixy="0" ixz="0" iyy="0.026000729166666663" iyz="0" izz="0.05148062499999999"/>
     </inertial>
     </link>
 
@@ -186,7 +191,8 @@
     <child link="left_wheel_link"/>
     <axis xyz="0 1 0"/>
     <limit velocity="17.45" effort="7.5"/>
-    <dynamics damping="0.7"/>
+    <dynamics damping="0.0"/>
+    <!-- <dynamics damping="0.7"/> -->
     </joint>
 
 <!-- casters pitch -->
@@ -209,10 +215,8 @@
     </collision>
     <inertial>
 		<origin xyz="0 0 -0.002" rpy="0 0 0"/>
-        <mass value="5"/>
-        <inertia ixx="1" ixy="0" ixz="0" iyz="0" iyy="1" izz="1"/>
 		<mass value="1.0"/>
-        <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.01"/>
+        <inertia ixx="0.0020833333333333333" ixy="0" ixz="0" iyy="0.0020833333333333333" iyz="0" izz="0.00375"/>
     </inertial>
     </link>
 
@@ -243,10 +247,8 @@
     </collision>
     <inertial>
 		<origin xyz="0 0 -0.002" rpy="0 0 0"/>
-        <mass value="5"/>
-        <inertia ixx="1" ixy="0" ixz="0" iyz="0" iyy="1" izz="1"/>
 		<mass value="1.0"/>
-        <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.01"/>
+        <inertia ixx="0.0020833333333333333" ixy="0" ixz="0" iyy="0.0020833333333333333" iyz="0" izz="0.00375"/>
     </inertial>
     </link>
 
@@ -278,16 +280,17 @@
       </collision>
       <inertial>
 		<origin xyz="0.0 0 0" rpy="0 0 0"/>
-        <mass value="5"/>
-        <inertia ixx="1" ixy="0" ixz="0" iyz="0" iyy="1" izz="1"/>
+        <mass value="1"/>
+        <inertia ixx="0.0013333333333333333" ixy="0" ixz="0" iyz="0" iyy="0.0006403333333333332" izz="0.0017069999999999998"/>
       </inertial>
     </link>
 
-    <joint name="front_pitch2shaft_joint" type="revolute">
+    <joint name="front_pitch2shaft_joint" type="fixed">
+    <!-- <joint name="front_pitch2shaft_joint" type="revolute"> -->
     <origin xyz="0.109 0 -0.0183" rpy="0 0 0"/>
     <parent link="front_casters_pitch_link"/>
-    <axis xyz="1 0 0"/>
-    <limit velocity="6.28" effort="28" lower="-0.5" upper="0.5"/>
+    <!-- <axis xyz="1 0 0"/> -->
+    <!-- <limit velocity="6.28" effort="28" lower="-0.5" upper="0.5"/> -->
 	<child link="front_pitch2shaft_link"/>
     </joint>
 
@@ -310,16 +313,17 @@
       </collision>
       <inertial>
 		<origin xyz="0.0 0 0" rpy="0 0 0"/>
-        <mass value="5"/>
-        <inertia ixx="1" ixy="0" ixz="0" iyz="0" iyy="1" izz="1"/>
+        <mass value="1"/>
+        <inertia ixx="0.0013333333333333333" ixy="0" ixz="0" iyz="0" iyy="0.0006403333333333332" izz="0.0017069999999999998"/>
       </inertial>
     </link>
 
-    <joint name="back_pitch2shaft_joint" type="revolute">
+    <joint name="back_pitch2shaft_joint" type="fixed">
+    <!-- <joint name="back_pitch2shaft_joint" type="revolute"> -->
     <origin xyz="0.109 0 -0.0183" rpy="0 0 0"/>
     <parent link="back_casters_pitch_link"/>
-    <axis xyz="1 0 0"/>
-    <limit velocity="6.28" effort="28" lower="-0.5" upper="0.5"/>
+    <!-- <axis xyz="1 0 0"/> -->
+    <!-- <limit velocity="6.28" effort="28" lower="-0.5" upper="0.5"/> -->
 	<child link="back_pitch2shaft_link"/>
     </joint>
 
@@ -343,14 +347,15 @@
       <inertial>
 		<origin xyz="0 0 0" rpy="1.5708 0 0"/>
 		<mass value="1.0"/>
-        <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.01"/>
+        <inertia ixx="0.0010560625" ixy="0" ixz="0" iyy="0.0010560625" iyz="0" izz="0.002016125"/>
       </inertial>
     </link>
 
-    <joint name="front_right_caster_joint" type="fixed">
+    <joint name="front_right_caster_joint" type="continuous">
       <origin xyz="0.043 -0.167 -0.010" rpy="0 0 0"/>
       <parent link="front_pitch2shaft_link"/>
       <child link="front_right_caster_link"/>
+      <axis xyz="0 1 0"/>
     </joint>
 
     <link name="front_left_caster_link">
@@ -372,14 +377,15 @@
       <inertial>
 		<origin xyz="0 0 0" rpy="1.5708 0 0"/>
 		<mass value="1.0"/>
-        <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.01"/>
+        <inertia ixx="0.0010560625" ixy="0" ixz="0" iyy="0.0010560625" iyz="0" izz="0.002016125"/>
       </inertial>
     </link>
 
-    <joint name="front_left_caster_joint" type="fixed">
+    <joint name="front_left_caster_joint" type="continuous">
       <origin xyz="0.043 0.167 -0.010" rpy="0 0 0"/>
       <parent link="front_pitch2shaft_link"/>
       <child link="front_left_caster_link"/>
+      <axis xyz="0 1 0"/>
     </joint>
 
     <link name="back_right_caster_link">
@@ -401,14 +407,15 @@
       <inertial>
 		<origin xyz="0 0 0" rpy="1.5708 0 0"/>
 		<mass value="1.0"/>
-        <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.01"/>
+        <inertia ixx="0.0010560625" ixy="0" ixz="0" iyy="0.0010560625" iyz="0" izz="0.002016125"/>
       </inertial>
     </link>
 
-    <joint name="back_right_caster_joint" type="fixed">
+    <joint name="back_right_caster_joint" type="continuous">
       <origin xyz="0.043 -0.167 -0.010" rpy="0 0 0"/>
       <parent link="back_pitch2shaft_link"/>
       <child link="back_right_caster_link"/>
+      <axis xyz="0 1 0"/>
     </joint>
 
     <link name="back_left_caster_link">
@@ -430,14 +437,15 @@
       <inertial>
 		<origin xyz="0 0 0" rpy="1.5708 0 0"/>
 		<mass value="1.0"/>
-        <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.02" iyz="0" izz="0.01"/>
+        <inertia ixx="0.0010560625" ixy="0" ixz="0" iyy="0.0010560625" iyz="0" izz="0.002016125"/>
       </inertial>
     </link>
 
-    <joint name="back_left_caster_joint" type="fixed">
+    <joint name="back_left_caster_joint" type="continuous">
       <origin xyz="0.043 0.167 -0.010" rpy="0 0 0"/>
       <parent link="back_pitch2shaft_link"/>
       <child link="back_left_caster_link"/>
+      <axis xyz="0 1 0"/>
     </joint>
 
 <!-- caster cover -->
@@ -501,8 +509,8 @@
     </collision>
     <inertial>
 	    <origin xyz="0 0 0.25" rpy="0 0 0"/>
-		<mass value="10"/>
-        <inertia ixx="1" ixy="0" ixz="0" iyz="0" iyy="1" izz="1"/>
+		<mass value="20"/>
+        <inertia ixx="0.5827104166666668" ixy="0" ixz="0" iyz="0" iyy="0.5827104166666668" izz="0.14421333333333333"/>
     </inertial>
     </link>
 
@@ -531,8 +539,8 @@
       </collision>
       <inertial>
 		  <origin xyz="0.0 0.0 0.254" rpy="0 0 0"/>
-		  <mass value="20"/>
-        <inertia ixx="1" ixy="0" ixz="0" iyz="0" iyy="1" izz="1"/>
+		  <mass value="1"/>
+        <inertia ixx="0.027052333333333334" ixy="0" ixz="0" iyz="0" iyy="0.027052333333333334" izz="0.011094"/>
       </inertial>
     </link>
 

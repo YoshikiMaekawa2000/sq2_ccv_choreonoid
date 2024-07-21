@@ -31,7 +31,7 @@ items:
               0, 1, 0,
               0, 0, 1 ]
             jointDisplacements: [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
-            initialRootPosition: [ 0, 0, 0 ]
+            initialRootPosition: [ 0, 0, 0.08 ]
             initialRootAttitude: [
               1, 0, 0,
               0, 1, 0,
@@ -60,7 +60,7 @@ items:
               data:
                 name_space: sq2_ccv
         -
-          id: 6
+          id: 5
           name: "Floor"
           plugin: Body
           class: BodyItem
@@ -85,14 +85,14 @@ items:
             scene_sensitive: true
             zmp: [ 0, 0, 0 ]
         -
-          id: 7
+          id: 6
           name: "WorldROS"
           plugin: ROS
           class: WorldROSItem
           data:
             max_clock_publishing_rate: 100
         -
-          id: 8
+          id: 7
           name: "AISTSimulator"
           plugin: Body
           class: AISTSimulatorItem
@@ -109,7 +109,6 @@ items:
             record_collision_data: false
             controller_options: ""
             block_scene_view_edit_mode: false
-            time_sync_items: [ 5 ]
             dynamicsMode: "Forward dynamics"
             integrationMode: semi-implicit_euler
             gravity: [ 0, 0, -9.80665 ]
@@ -168,9 +167,9 @@ views:
         -
           camera: [ System, Perspective ]
           isCurrent: true
-          eye: [ 7.52106, -8.15707, 4.87221 ]
-          direction: [ -0.611604, 0.714338, -0.340091 ]
-          up: [ -0.221185, 0.258338, 0.940393 ]
+          eye: [ -7.31343, 0.00255269, 7.71443 ]
+          direction: [ 0.859087, 0.016212, -0.511572 ]
+          up: [ 0.511481, 0.00965228, 0.85924 ]
         -
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -251,7 +250,7 @@ views:
     mounted: true
 toolbars:
   "TimeBar":
-    current_time: 26.823
+    current_time: 0
     min_time: 0
     max_time: 30
     frame_rate: 1000
@@ -293,7 +292,7 @@ Body:
         show_cm_projection: false
         show_zmp: false
       -
-        body_item: 6
+        body_item: 5
         show_cm: false
         show_cm_projection: false
         show_zmp: false
@@ -319,7 +318,7 @@ viewAreas:
             -
               type: splitter
               orientation: vertical
-              sizes: [ 472, 471 ]
+              sizes: [ 424, 424 ]
               children:
                 -
                   type: pane
@@ -331,7 +330,7 @@ viewAreas:
             -
               type: splitter
               orientation: vertical
-              sizes: [ 707, 236 ]
+              sizes: [ 636, 212 ]
               children:
                 -
                   type: pane
@@ -343,7 +342,7 @@ viewAreas:
         -
           type: splitter
           orientation: vertical
-          sizes: [ 207, 736 ]
+          sizes: [ 198, 650 ]
           children:
             -
               type: pane
@@ -351,7 +350,7 @@ viewAreas:
             -
               type: splitter
               orientation: vertical
-              sizes: [ 286, 446 ]
+              sizes: [ 284, 362 ]
               children:
                 -
                   type: pane
