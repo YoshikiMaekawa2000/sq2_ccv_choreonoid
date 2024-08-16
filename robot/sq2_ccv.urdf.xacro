@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot name="sq2_ccv" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find sq2_ccv_choreonoid)/xacro/base/base.urdf.xacro"/>
+    <xacro:include filename="$(find sq2_ccv_choreonoid)/xacro/base/base2body.urdf.xacro"/>
+    <xacro:include filename="$(find sq2_ccv_choreonoid)/xacro/steering/steering.urdf.xacro"/>
+    <xacro:include filename="$(find sq2_ccv_choreonoid)/xacro/wheel/wheel.urdf.xacro"/>
+
+
+    <link name="base_footprint"/>
+    <!-- Base -->
+    <xacro:base parent="base_footprint">
+        <origin xyz="0 0 0"/>
+    </xacro:base>
+    <!--Base2Body-->
+    <xacro:base2body parent="base_link">
+        <origin xyz="0 0 -0.011"/>
+    </xacro:base2body>
+    <!-- Steering -->
+    <xacro:steering prefix="right" parent="base_link">
+        <origin xyz="0 -0.2245 0.048" rpy="0 0 0"/>
+    </xacro:steering>
+    <xacro:steering prefix="left" parent="base_link">
+        <origin xyz="0 0.2245 0.048" rpy="0 0 0"/>
+    </xacro:steering>
+    <!-- Wheel -->
+    <xacro:wheel prefix="right" parent="right_steering_link">
+        <origin xyz="0 0 0.0275" rpy="0 0 0"/>
+    </xacro:wheel>
+    <xacro:wheel prefix="left" parent="left_steering_link">
+        <origin xyz="0 0 0.0275" rpy="0 0 0"/>
+    </xacro:wheel>
+    
+
+
+
+</robot>

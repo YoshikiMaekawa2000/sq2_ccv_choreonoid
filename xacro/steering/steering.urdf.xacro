@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find sq2_ccv_choreonoid)/xacro/common.xacro"/>
+
+    <xacro:property name="steering_radius" value="0.01675"/>
+    <xacro:property name="steering_width" value="0.003"/>
+    <xacro:property name="steering_mass" value="1.0"/>
+
+    <xacro:macro name="steering" params="prefix parent *joint_origin">
+        <joint name="${prefix}_steering_joint" type="revolute">
+            <xacro:insert_block name="joint_origin"/>
+            <parent link="${parent}"/>
+            <child link="${prefix}_steering_link"/>
+            <axis xyz="0 0 1"/>
+            <limit velocity="6.28" effort="11" lower="${-M_PI/6}" upper="${M_PI/6}"/>
+        </joint>
+
+        <link name="${prefix}_steering_link">
+            <visual>
+                <material name="black"/>
+                    <color rgba="0.5 0.5 0.5 1"/>
+                <origin xyz="0 0 ${steering_width/2}" rpy="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://sq2_ccv_choreonoid/meshes/${prefix}_drive_motor.stl" />
+                </geometry>
+            </visual>
+            <collision>
+                <origin xyz="0 0 ${steering_width/2}" rpy="0 0 0"/>
+                <geometry>
+                    <cylinder radius="${steering_radius}" length="${steering_width}"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <origin xyz="0 0 ${steering_width/2}" rpy="0 0 0"/>
+                <xacro:cylinder_inertial mass="${steering_mass}" radius="${steering_radius}" length="${steering_width}"/>
+            </inertial>
+        </link>
+    </xacro:macro>
+</robot>

@@ -162,6 +162,8 @@
     <!-- <dynamics damping="0.7"/> -->
     </joint>
 
+    
+
     <link name="left_wheel_link">
     <visual>
 		<origin xyz="0 0 0" rpy="0 0 0"/>
@@ -424,6 +426,7 @@
 		    <origin xyz="0 0 0" rpy="1.5708 0 0"/>
         <geometry>
 	  	  <cylinder radius="0.0635" length="0.024"/>
+          <!-- <mesh filename="package://sq2_ccv_choreonoid/meshes/caster.stl" /> -->
         </geometry>
 		<material name="black">
             <color rgba="0.2 0.2 0.2 1.0"/>
@@ -432,7 +435,8 @@
       <collision>
 		<origin xyz="0 0 0" rpy="1.5708 0 0"/>
         <geometry>
-	  	  <cylinder radius="0.0635" length="0.024"/>
+	  	  <!-- <cylinder radius="0.0635" length="0.024"/> -->
+          <mesh filename="package://sq2_ccv_choreonoid/meshes/caster.stl" />
         </geometry>
       </collision>
       <inertial>
@@ -548,7 +552,7 @@
     </joint>
 
 <!-- caster cover -->
-    <link name="front_caster_cover_link">
+    <!-- <link name="front_caster_cover_link">
       <visual>
         <origin xyz="0.0 0.0 0.022" rpy="0 0 0"/>
         <geometry>
@@ -582,7 +586,7 @@
     <origin xyz="-0.2124 0.00 0.00" rpy="0 0 3.141592"/>
     <parent link="back_pitch2shaft_link"/>
     <child link="back_caster_cover_link"/>
-    </joint>
+    </joint> -->
 
 
     <!-- ########## -->
@@ -774,6 +778,31 @@
       </actuator>
     </transmission>
 
+    <!-- gazebo -->
+    <gazebo reference="front_right_caster_link">
+      <material>Gazebo/Black</material>
+      <selfCollide>false</selfCollide>
+      <mu1 value="0.0"/>
+      <mu2 value="0.0"/>
+    </gazebo>
+    <gazebo reference="front_left_caster_link">
+      <material>Gazebo/Black</material>
+      <selfCollide>false</selfCollide>
+      <mu1 value="0.0"/>
+      <mu2 value="0.0"/>
+    </gazebo>
+    <gazebo reference="back_right_caster_link">
+      <material>Gazebo/Black</material>
+      <selfCollide>false</selfCollide>
+      <mu1 value="0.0"/>
+      <mu2 value="0.0"/>
+    </gazebo>
+    <gazebo reference="back_left_caster_link">
+      <material>Gazebo/Black</material>
+      <selfCollide>false</selfCollide>
+      <mu1 value="0.0"/>
+      <mu2 value="0.0"/>
+    </gazebo>
 
 
 </robot>
